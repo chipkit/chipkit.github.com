@@ -1,0 +1,20 @@
+{
+    "name": "chipkit",
+    "description": "Comcast Home Innovation Platform",
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "http://comcast.buglabs.net",
+    "author": "BugLabs Inc.",
+    "repository": "git://github.com/chipkit/chipkit.github.com",
+    "engines": {
+        "node": "0.6.x"
+    },
+    "devDependencies": {
+    },
+    "dependencies": {
+        "express": "2.5.9",
+        "jade": "0.25.0",
+        "connect-cookie-session": "https://c4milo@github.com/c4milo/connect-cookie-session/tarball/master"
+    }
+}
+
