@@ -45,7 +45,7 @@ deploy() {
 
     git clone -b $BRANCH git@github.com:chipkit/$PROJECT.git $SNAPSHOT
 
-    cd $SNAPSHOT && git submodule update --init && make install && chmod 755 server.js
+    cd $SNAPSHOT && git submodule update --init && npm install && chmod 755 server.js
 
     #links snapshot with release
     [ -e $RELEASE ] && unlink $RELEASE
