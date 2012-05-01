@@ -1,0 +1,40 @@
+!!! 5
+html
+  head
+    title Comcast Hardware Innovation Platform
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/styles/bootstrap/bootstrap.css')
+    link(rel='stylesheet', href='/styles/bootstrap/bootstrap-responsive.css')
+    link(rel='stylesheet', href='/styles/main.css')
+    //Le HTML5 shim, for IE6-8 support of HTML5 elements
+    //if lt IE 9
+      script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+  body
+    div.navbar.navbar-fixed-top
+      div.navbar-inner
+        div.container-fluid
+          a(href='#').brand 
+            img(src='/images/logo.gif')#logo-header
+          div.nav-collapse
+            ul.nav
+              li.active
+                a(href='#') Welcome #{username}
+              li
+                a(href='#') General Info
+              li
+                a(href='http://www.comcast.com/') Directions to Comcast Center
+              li
+                a(href='/student_travel_form.doc') Travel Form
+              li
+                a(href='#') Schedule
+              li
+                a(href='#') Contact
+              li
+                a(href='#{logout_url}') Logout
+    #container.container-fluid
+      !=body
+      hr
+      footer
+       p © Comcast Confidential 2012
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/bootstrap.js')

@@ -7,10 +7,7 @@ var app = module.exports = express.createServer();
 
 // Configuration
 app.configure(function() {
-    //app.set('view engine', 'jade');
-    app.set('view options', {
-        layout: false
-    });
+    app.set('view engine', 'jade');
 
     /*app.use(express.favicon(__dirname + '/public/images/favicon.ico', {
         maxAge: 2592000000
@@ -75,10 +72,11 @@ function requireAuth(req, res, next) {
 }
 
 app.get('/', requireAuth, function(req, res) {
-    res.sendfile('./lib/index/index.html');
-    /*res.render('index', {
-        username: req.session.username
-    });*/
+    res.render('index', {
+        username: req.session.username,
+        logout_url: config.buglabs_accounts +
+            '/logout?_appid=' + config._appid + '&redirect=' + config.url
+    });
 });
 
 process.on('uncaughtException', function(e) {
