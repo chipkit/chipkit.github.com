@@ -32,7 +32,11 @@ html
               li
                 a(href='#{logout_url}') Logout
     #container.container-fluid
-      !=body
+      div.row-fluid
+       div.span3
+        include left_menu
+       div.span9
+        !=body
       hr
       footer
        p © Comcast Confidential 2012
