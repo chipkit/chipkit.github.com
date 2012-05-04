@@ -8,6 +8,9 @@ var app = module.exports = express.createServer();
 // Configuration
 app.configure(function() {
     app.set('view engine', 'jade');
+    /*app.set('view options', {
+        layout: false
+    });*/
 
     /*app.use(express.favicon(__dirname + '/public/images/favicon.ico', {
         maxAge: 2592000000
@@ -76,6 +79,15 @@ app.get('/', requireAuth, function(req, res) {
         username: req.session.username,
         logout_url: config.buglabs_accounts +
             '/logout?_appid=' + config._appid + '&redirect=' + config.url
+    });
+});
+
+app.get('/coming_soon', requireAuth, function(req, res) {
+    res.render('coming_soon', {
+        username: req.session.username,
+        logout_url: config.buglabs_accounts +
+            '/logout?_appid=' + config._appid + '&redirect=' + config.url,
+        layout: '../layout'
     });
 });
 
