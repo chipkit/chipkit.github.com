@@ -91,6 +91,15 @@ app.get('/coming_soon', requireAuth, function(req, res) {
     });
 });
 
+app.get('/general_info', requireAuth, function(req, res) {
+    res.render('general_info', {
+        username: req.session.username,
+        logout_url: config.buglabs_accounts +
+            '/logout?_appid=' + config._appid + '&redirect=' + config.url,
+        layout: '../layout'
+    });
+});
+
 process.on('uncaughtException', function(e) {
     console.log('Uncaught Exception -> ');
     console.log(e.message);
