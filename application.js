@@ -100,6 +100,15 @@ app.get('/general_info', requireAuth, function(req, res) {
     });
 });
 
+app.get('/schedule', requireAuth, function(req, res) {
+    res.render('schedule', {
+        username: req.session.username,
+        logout_url: config.buglabs_accounts +
+            '/logout?_appid=' + config._appid + '&redirect=' + config.url,
+        layout: '../layout'
+    });
+});
+
 process.on('uncaughtException', function(e) {
     console.log('Uncaught Exception -> ');
     console.log(e.message);
