@@ -12,7 +12,6 @@
     "dependencies": {
         "express": "2.5.9",
         "jade": "0.25.0",
-        "discount": "0.2.3",
         "connect-cookie-session": "https://c4milo@github.com/c4milo/connect-cookie-session/tarball/master"
     }
 }
